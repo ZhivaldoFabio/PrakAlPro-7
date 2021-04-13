@@ -1,0 +1,39 @@
+'''
+Hanna ingin membuat surat. Surat itu ditujukan kepada temannya, Bella. 
+Akan tetapi, Hanna tidak tau dia harus mulai dari mana. 
+Bantu Hanna membuat format surat yang sangat simple dengan membuat program untuk Hanna.
+
+Input : Nama Pengirim, Penerima, Isi surat, Pilihan
+
+Process : Membuka / membuat file .txt, Memasukan kata / kalimat, penggabungan, pencetakan.
+
+Output : Mencetak menjadi file.
+
+'''
+print('\n The Letter Maker! \n')
+file_name = input('What would you call this Letter?\n>> ')
+reciever = input('Who is the Reciever? \n>> ')
+sender = input('How should the call you? \n>> ')
+
+def first ():
+    f = open(file_name+'txt', 'a')
+    f.write ('Dear, '+reciever+'\n\n')
+
+def second ():
+    f = open(file_name+'txt', 'a')
+    isi = input('Input your Message : (Use Space " " to end the Letter.) \n')
+    f.write(isi)
+    while isi != ' ':
+        f = open(file_name+'txt', 'a')
+        isi = input('')
+        if isi != ' ':
+            f.write('\n'+isi)
+
+def third ():
+    f = open(file_name+'txt', 'a')
+    f.write ('\n \nYour sincerely,\n'+sender)
+    f.close()
+
+first()
+second()
+third()
